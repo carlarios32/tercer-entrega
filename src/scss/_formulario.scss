@@ -25,7 +25,7 @@
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 60px;
     grid-template-areas: "Zona1"
                          "Zona2"
-                         "Zona2"
+                         "Zona3"
                          "Zona4"
                          "Zona5"
                          "Zona6"
@@ -34,45 +34,32 @@
 }
 
 @for $var from 1 to 8{
+    @if($var == 1){
+        h2:nth-child(#{$var}){
+            grid-area: zona#{$var};
+
+    }
+}
+
+@else if($var == 7){
+    button:nth-child(7){
+        grid-area: zona#{$var};
+        width: 150px;
+        border-radius: 5px;
+        border: none;
+        font-size: 15px;
+        color:#afbf34;
+        margin-top: 20px;
+    
+        }
+    }
+   @else{
     label:nth-child(#{$var}){
         grid-area: zona#{$var};
+   } 
+    }
     }
 
-}
-
-h2:nth-child(1){
-    grid-area: Título;
-}
-
-label ::nth-child(2){
-    grid-area: nameApellido;
-}
-
-label ::nth-child(3){
-    grid-area: email;
-}
-
-label ::nth-child(4){
-    grid-area: tel;
-}
-
-label ::nth-child(5){
-    grid-area: asunto;
-}
-
-label ::nth-child(6){
-    width: 100%;
-}
-
-button:nth-child(7){
-    grid-area: button;
-    width: 150px;
-    border-radius: 5px;
-    border: none;
-    font-size: 15px;
-    color:#afbf34;
-    margin-top: 20px;
-}
 
 label{
     display: flex;
