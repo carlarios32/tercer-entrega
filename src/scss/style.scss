@@ -1,0 +1,290 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import "formulario";
+
+.bodyConAside{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 100px 300px 1fr 1fr auto;
+    grid-template-areas: "nav    nav    nav    nav"
+                         "header header header header"
+                         "main   main   main   aside"
+                         "footer footer footer footer";
+                          
+}
+
+@media(max-width: 576px){
+    .bodyConAside{
+        grid-template-rows: 100px 300px auto auto auto;
+        grid-template-areas: "nav    nav    nav    nav"
+                             "header header header header"
+                             "main   main   main   main"
+                             "aside  aside  aside  aside"
+                             "footer footer footer footer";
+    }
+}
+
+.bodySinAside{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 100px 300px 1fr auto;
+    grid-template-areas: "nav    nav    nav    nav"
+                         "header header header header"
+                         "main   main   main   main"
+                         "footer footer footer footer";   
+}
+.navegador{
+    grid-area: nav;
+    background-color: #afbf34;
+    padding: 20px;
+
+}
+.navegador .fa-bars{
+    display: none;
+}
+
+.navegador > ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: end;
+}
+.navegador > ul > li {
+    position: relative;
+} 
+.navegador > ul > li:hover ul{
+    display: block;
+}
+
+.navegador  ul  li  a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+.navegador > ul > li > ul {
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    background-color:#afbf34;
+    left: -10px;
+    
+}
+@media(max-width: 576px){
+    .navegador .fa-bars{
+        display: block;
+        color: white;
+        font-size: 30px;
+    }
+
+
+.navegador > ul{
+      position: fixed;  
+      top: 0;
+      left: -300px;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      padding-top: 70px;
+      background-color:#afbf34;
+      width: 250px;
+      height: 100vh;
+      transition: 0.2s;
+      
+}
+
+}
+.navegador .fa-bars:hover + ul {
+    left: 0;
+    
+}
+.navegador ul:hover{
+    left: 0;
+}
+
+
+.encabezado{
+    background-image: url(../img/2.png);
+    background-size: cover;
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.encabezado-info h1{
+    color: white;
+
+}
+
+main{
+    grid-area: main;
+
+}
+.btn{
+    margin-top: 10px;
+    padding: 5px 25px;
+    background-color: #BEBF34;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.subtitulo {
+    margin: 10px;
+}
+.tarjeta{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.tarjeta {
+    display: flex;
+    width: 350px;
+    gap: 10px;
+    margin: 10px;
+
+}
+.tarjeta img {
+    width: 250px;
+}
+
+aside{
+    grid-area: aside;
+
+}
+.publicidades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.publicidad {
+    width: 150px;
+    height: 100px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px;
+
+}
+
+.publicidad h4{
+    width: 100%;
+    padding: 5%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0.411);
+    color: white;
+
+}
+.publicidad img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+footer{
+    grid-area: footer;
+    background-color: #afbf34;
+}
+
+
+.loading{
+    width: 100vw;
+    height: 100vh;
+    background-color: #bfbf345d;
+    position: fixed;
+    z-index: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading i{
+    color: white;
+    font-size: 64px;
+    animation-name: rotar;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotar {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+
+footer{
+    color: white;
+
+}
+
+footer .compania{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.tarjetas{
+    width: 300px;
+    height: 350px;
+    border: 1px solid;
+    border-radius: 5px;
+    position: relative;
+    transition: 0.5s;
+}
+
+.btntarj{
+    position: absolute;
+    width: 250px;
+    bottom: 30px;
+    
+}
+
+
+.tarjetas:hover{
+    transform: translate(10px,20px);
+}
+
+.bg-body-tertiary{
+    background-color: #afbf34 !important;
+}
+.navbar{
+    padding: 20px;
+}
+
+.nav-link:hover{
+    background-color: rgb(248, 245, 245);
+
+}
+
+.formulario{
+    width: 50%;
+    margin: 20PX auto;
+    padding: 10px;
+}
+
+.imgefect:hover{
+    transform: scale(1.5);
+    transition: .5s;
+
+}
+
+
+
+.banner1{
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
