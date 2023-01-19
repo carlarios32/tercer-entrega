@@ -10,11 +10,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 60px;
-    grid-template-areas:  "Zona1       Zona1"
-                          "Zona2       Zona3"
-                          "Zona4       Zona5"
-                          "Zona6       Zona6"
-                          "Zona7       Zona7";
+    grid-template-areas:  "zona1       zona1"
+                          "zona2       zona3"
+                          "zona4       zona5"
+                          "zona6       zona6"
+                          "zona7       zona7";
 
 
 @media(max-width:800px){
@@ -23,43 +23,51 @@
     border-radius: 0px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 60px;
-    grid-template-areas: "Zona1"
-                         "Zona2"
-                         "Zona3"
-                         "Zona4"
-                         "Zona5"
-                         "Zona6"
-                         "Zona7";
+    grid-template-areas: "zona1"
+                         "zona2"
+                         "zona3"
+                         "zona4"
+                         "zona5"
+                         "zona6"
+                         "zona7";
 
 }
 
 @for $var from 1 to 8{
-    @if($var == 1){
-        h2:nth-child(#{$var}){
-            grid-area: zona#{$var};
+    @if($var == 1 ){
 
-    }
+.zona1{
+    grid-area: zona1;
 }
-
-@else if($var == 7){
-    button:nth-child(7){
-        grid-area: zona#{$var};
-        width: 150px;
-        border-radius: 5px;
-        border: none;
-        font-size: 15px;
-        color:#afbf34;
-        margin-top: 20px;
-    
-        }
-    }
-   @else{
-    label:nth-child(#{$var}){
-        grid-area: zona#{$var};
-   } 
-    }
-    }
-
+.zona2{
+    grid-area: zona2;
+}
+.zona3{
+    grid-area: zona3;
+}
+.zona4{
+    grid-area: zona4;
+}
+.zona5{
+    grid-area: zona5;
+}
+.zona6{
+    grid-area: zona6;
+}
+}
+@else if ($var == 7){
+        button:nth-child(7){
+            grid-area: zona#{$var};
+            width: 200px;
+            border-radius: 5px;
+            border: none;
+            font-size: 20px;
+            color:#afbf34;
+            margin-top: 20px;
+          
+}
+}
+}
 
 label{
     display: flex;

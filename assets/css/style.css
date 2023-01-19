@@ -16,7 +16,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 60px;
-  grid-template-areas: "Zona1       Zona1" "Zona2       Zona3" "Zona4       Zona5" "Zona6       Zona6" "Zona7       Zona7";
+  grid-template-areas: "zona1       zona1" "zona2       zona3" "zona4       zona5" "zona6       zona6" "zona7       zona7";
 }
 @media (max-width: 800px) {
   .formulario {
@@ -25,33 +25,33 @@
     border-radius: 0px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 60px;
-    grid-template-areas: "Zona1" "Zona2" "Zona3" "Zona4" "Zona5" "Zona6" "Zona7";
+    grid-template-areas: "zona1" "zona2" "zona3" "zona4" "zona5" "zona6" "zona7";
   }
 }
-.formulario h2:nth-child(1) {
+.formulario .zona1 {
   grid-area: zona1;
 }
-.formulario label:nth-child(2) {
+.formulario .zona2 {
   grid-area: zona2;
 }
-.formulario label:nth-child(3) {
+.formulario .zona3 {
   grid-area: zona3;
 }
-.formulario label:nth-child(4) {
+.formulario .zona4 {
   grid-area: zona4;
 }
-.formulario label:nth-child(5) {
+.formulario .zona5 {
   grid-area: zona5;
 }
-.formulario label:nth-child(6) {
+.formulario .zona6 {
   grid-area: zona6;
 }
 .formulario button:nth-child(7) {
   grid-area: zona7;
-  width: 150px;
+  width: 200px;
   border-radius: 5px;
   border: none;
-  font-size: 15px;
+  font-size: 20px;
   color: #afbf34;
   margin-top: 20px;
 }
